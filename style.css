@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Mochiy+Pop+P+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Heebo', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+li{
+    list-style: none;
+}
+
+nav{
+    position: sticky;
+    isolation: isolate;
+    width: 100%;
+}
+
+.nav-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.nav-logo{
+    font-size: 1.25rem;
+    background: linear-gradient(45deg, #babcc1, #58595b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-logo h3{
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.nav-menu{
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.nav-list{
+    position: absolute;
+    right: 0;
+    gap: 1rem;
+    width: 100%;   
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #babcc1;
+    padding: 1rem;
+    border-bottom-left-radius: 3rem;
+}
+
+.nav-list li:hover{
+    background: linear-gradient(45deg, #babcc1, #58595b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-list.open{
+    display: flex;
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img{
+    width: 14rem;
+    border-radius: 50%;
+}
+
+.hero-text h3{
+    font-size: 1.5rem;
+    background: linear-gradient(45deg, #babcc1, #58595b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    text-align: start;    
+}
+
+.changing-text{
+    background: linear-gradient(45deg, #babcc1, #58595b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    text-align: start;
+    animation: changeText 2s infinite, slider 2s infinite;
+    display: inline-block;
+    position: relative;
+    top: 0;
+}
+
+.changing-text::after{
+    background: linear-gradient(45deg, #babcc1, #58595b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    text-align: start;
+    content: "Abdulloh Umar";
+    animation: changeText 2s infinite, slider 2s infinite;
+    top: 100%;
+}
+
+@keyframes changeText{
+    0%, 25%{
+        content: "Abdulloh Umar";
+    }
+    30%, 50%{
+       content: "Web Developer";
+    }
+    51%, 75%{
+        content: "Abdulloh Umar";
+    }
+}
+
+@keyframes slider{
+    0%, 25% {
+        top: 100%; 
+        opacity: 0;
+    }
+    30%, 50% {
+        top: 0%;
+        opacity: 1;
+    }
+    51%, 75% {
+        top: 100%; 
+        opacity: 0;
+    }
+}
+
