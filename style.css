@@ -92,62 +92,58 @@ nav{
     border-radius: 50%;
 }
 
-.hero-text h3{
-    font-size: 1.5rem;
-    background: linear-gradient(45deg, #babcc1, #58595b);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: 'Mochiy Pop P One', sans-serif;
-    text-align: start;    
+.hero-text{
+    display: inline-flex;
 }
 
-.changing-text{
-    background: linear-gradient(45deg, #babcc1, #58595b);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: 'Mochiy Pop P One', sans-serif;
-    text-align: start;
-    animation: changeText 2s infinite, slider 2s infinite;
-    display: inline-block;
+.static-text{
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: 500;
+}
+
+.dynamic-text{
+    margin-left: 10px;
+    height: 2rem;
+    line-height: 2rem;
+    /* overflow: hidden; */
+}
+
+.hero-text .dynamic-text li {
+    font-size: 1.5rem;
+    color: #343536;
+    font-weight: 500;
     position: relative;
     top: 0;
+    animation: slide 5s steps(2) infinite
 }
 
-.changing-text::after{
-    background: linear-gradient(45deg, #babcc1, #58595b);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+@keyframes slide{
+    100%{
+        top: -40rem;
+    }
+}
+
+.hero-text .dynamic-text li span{
+    position: relative;
     font-family: 'Mochiy Pop P One', sans-serif;
-    text-align: start;
-    content: "Abdulloh Umar";
-    animation: changeText 2s infinite, slider 2s infinite;
-    top: 100%;
 }
 
-@keyframes changeText{
-    0%, 25%{
-        content: "Abdulloh Umar";
-    }
-    30%, 50%{
-       content: "Web Developer";
-    }
-    51%, 75%{
-        content: "Abdulloh Umar";
-    }
+.dynamic-text li span::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid #58595b;
+    left: 0;
+    animation: typing 1.5s steps(15) infinite;
+    background: #fff;
 }
 
-@keyframes slider{
-    0%, 25% {
-        top: 100%; 
-        opacity: 0;
-    }
-    30%, 50% {
-        top: 0%;
-        opacity: 1;
-    }
-    51%, 75% {
-        top: 100%; 
-        opacity: 0;
+@keyframes typing{
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
     }
 }
 
